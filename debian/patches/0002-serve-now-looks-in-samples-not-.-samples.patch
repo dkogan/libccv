@@ -1,0 +1,51 @@
+From: Dima Kogan <dima@secretsauce.net>
+Date: Tue, 8 Oct 2013 23:47:05 -0700
+Subject: serve now looks in samples/, not ../samples/
+
+---
+ serve/bbf.c | 2 +-
+ serve/dpm.c | 4 ++--
+ serve/icf.c | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/serve/bbf.c b/serve/bbf.c
+index b739617..b131df6 100644
+--- a/serve/bbf.c
++++ b/serve/bbf.c
+@@ -103,7 +103,7 @@ void* uri_bbf_detect_objects_parse(const void* context, void* parsed, int resour
+ void* uri_bbf_detect_objects_init(void)
+ {
+ 	bbf_context_t* context = (bbf_context_t*)malloc(sizeof(bbf_context_t));
+-	context->face = ccv_bbf_read_classifier_cascade("../samples/face");
++	context->face = ccv_bbf_read_classifier_cascade("samples/face");
+ 	assert(context->face);
+ 	assert(param_parser_map_alphabet(param_map, sizeof(param_map) / sizeof(param_dispatch_t)) == 0);
+ 	context->desc = param_parser_map_http_body(param_map, sizeof(param_map) / sizeof(param_dispatch_t),
+diff --git a/serve/dpm.c b/serve/dpm.c
+index 6e53d33..251fc53 100644
+--- a/serve/dpm.c
++++ b/serve/dpm.c
+@@ -101,8 +101,8 @@ void* uri_dpm_detect_objects_parse(const void* context, void* parsed, int resour
+ void* uri_dpm_detect_objects_init(void)
+ {
+ 	dpm_context_t* context = (dpm_context_t*)malloc(sizeof(dpm_context_t));
+-	context->pedestrian = ccv_dpm_read_mixture_model("../samples/pedestrian.m");
+-	context->car = ccv_dpm_read_mixture_model("../samples/car.m");
++	context->pedestrian = ccv_dpm_read_mixture_model("samples/pedestrian.m");
++	context->car = ccv_dpm_read_mixture_model("samples/car.m");
+ 	assert(context->pedestrian && context->car);
+ 	assert(param_parser_map_alphabet(param_map, sizeof(param_map) / sizeof(param_dispatch_t)) == 0);
+ 	context->desc = param_parser_map_http_body(param_map, sizeof(param_map) / sizeof(param_dispatch_t),
+diff --git a/serve/icf.c b/serve/icf.c
+index 1e7ba12..23a4c4b 100644
+--- a/serve/icf.c
++++ b/serve/icf.c
+@@ -98,7 +98,7 @@ void* uri_icf_detect_objects_parse(const void* context, void* parsed, int resour
+ void* uri_icf_detect_objects_init(void)
+ {
+ 	icf_context_t* context = (icf_context_t*)malloc(sizeof(icf_context_t));
+-	context->pedestrian = ccv_icf_read_classifier_cascade("../samples/pedestrian.icf");
++	context->pedestrian = ccv_icf_read_classifier_cascade("samples/pedestrian.icf");
+ 	assert(context->pedestrian);
+ 	assert(param_parser_map_alphabet(param_map, sizeof(param_map) / sizeof(param_dispatch_t)) == 0);
+ 	context->desc = param_parser_map_http_body(param_map, sizeof(param_map) / sizeof(param_dispatch_t),
