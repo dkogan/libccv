@@ -1,0 +1,5 @@
+libccv (0.5-1) unstable; urgency=low
+
+  * Initial debianization
+
+ -- Dima Kogan <dima@secretsauce.net>  Tue, 08 Oct 2013 22:28:53 -0700

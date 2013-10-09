@@ -1,0 +1,50 @@
+Source: libccv
+Section: non-free/science
+Priority: optional
+Maintainer: Dima Kogan <dima@secretsauce.net>
+Standards-Version: 3.9.4
+Homepage: http://libccv.org/
+Build-Depends: debhelper (>= 9), dh-exec,
+ libdispatch-dev,
+ libev-dev
+
+Package: libccv1
+Section: non-free/libs
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: C-based/Cached/Core Computer Vision Library
+ ccv end up implementing a handful state-of-art algorithms.
+ It includes a very fast detection algorithm for rigid object (face, etc..),
+ an accurate object detection algorithm for somewhat difficult object
+ (pedestrian, cat, etc..), a state-of-art text detection algorithm,
+ and the long-standing feature point detection algorithm.
+
+Package: libccv-dev
+Section: non-free/libdevel
+Architecture: any
+Depends: ${misc:Depends}, libccv1 (= ${binary:Version}),
+ libdispatch-dev,
+ libev-dev
+Description: C-based/Cached/Core Computer Vision Library
+ ccv end up implementing a handful state-of-art algorithms.
+ It includes a very fast detection algorithm for rigid object (face, etc..),
+ an accurate object detection algorithm for somewhat difficult object
+ (pedestrian, cat, etc..), a state-of-art text detection algorithm,
+ and the long-standing feature point detection algorithm.
+ .
+ Development files
+
+Package: libccv1-dbg
+Section: non-free/debug
+Priority: extra
+Architecture: any
+Depends: ${misc:Depends}, libccv1 (= ${binary:Version})
+Description: C-based/Cached/Core Computer Vision Library
+ ccv end up implementing a handful state-of-art algorithms.
+ It includes a very fast detection algorithm for rigid object (face, etc..),
+ an accurate object detection algorithm for somewhat difficult object
+ (pedestrian, cat, etc..), a state-of-art text detection algorithm,
+ and the long-standing feature point detection algorithm.
+ .
+ Debug symbols

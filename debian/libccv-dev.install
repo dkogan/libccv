@@ -1,0 +1,5 @@
+#!/usr/bin/dh-exec
+
+lib/ccv.h usr/include
+lib*.a usr/lib/${DEB_HOST_MULTIARCH}
+lib*.so usr/lib/${DEB_HOST_MULTIARCH}
