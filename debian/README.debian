@@ -1,0 +1,7 @@
+This is a debianized libccv 0.5. As it currently stands, this can not be added
+to Debian since SIFT is patented. A flavor of this library without SIFT is
+possibly eligible, but I will not push that.
+
+Thus this tree exists for convenience or as a future template.
+
+ -- Dima Kogan <dima@secretsauce.net>, Wed,  9 Oct 2013 14:07:58 -0700
