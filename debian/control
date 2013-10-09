@@ -5,7 +5,6 @@ Maintainer: Dima Kogan <dima@secretsauce.net>
 Standards-Version: 3.9.4
 Homepage: http://libccv.org/
 Build-Depends: debhelper (>= 9), dh-exec,
- libdispatch-dev,
  libavcodec-dev,
  libavformat-dev,
  libswscale-dev,
@@ -32,7 +31,6 @@ Package: libccv-dev
 Section: non-free/libdevel
 Architecture: any
 Depends: ${misc:Depends}, libccv1 (= ${binary:Version}),
- libdispatch-dev,
  libev-dev
 Description: C-based/Cached/Core Computer Vision Library
  ccv end up implementing a handful state-of-art algorithms.
