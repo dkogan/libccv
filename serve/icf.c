@@ -98,7 +98,7 @@ void* uri_icf_detect_objects_parse(const void* context, void* parsed, int resour
 void* uri_icf_detect_objects_init(void)
 {
 	icf_context_t* context = (icf_context_t*)malloc(sizeof(icf_context_t));
-	context->pedestrian = ccv_icf_read_classifier_cascade("../samples/pedestrian.icf");
+	context->pedestrian = ccv_icf_read_classifier_cascade("samples/pedestrian.icf");
 	assert(context->pedestrian);
 	assert(param_parser_map_alphabet(param_map, sizeof(param_map) / sizeof(param_dispatch_t)) == 0);
 	context->desc = param_parser_map_http_body(param_map, sizeof(param_map) / sizeof(param_dispatch_t),
