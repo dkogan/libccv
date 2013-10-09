@@ -6,7 +6,15 @@ Standards-Version: 3.9.4
 Homepage: http://libccv.org/
 Build-Depends: debhelper (>= 9), dh-exec,
  libdispatch-dev,
- libev-dev
+ libavcodec-dev,
+ libavformat-dev,
+ libswscale-dev,
+ libblas-dev,
+ libfftw3-dev,
+ libgsl0-dev,
+ libjpeg8-dev,
+ liblinear-dev,
+ libpng12-dev
 
 Package: libccv1
 Section: non-free/libs
